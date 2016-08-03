@@ -1,25 +1,28 @@
 var GPIO = require('onoff').Gpio;
-var led = new GPIO(13, 'out');
+var ledOut = new GPIO(13, 'out');
+var ledIn = new GPIO(13, 'in');
 var state = 3;
+var ON=1;
+var OFF=0;
 
 function toggle(st) {
-	state =  st
-	console.log('state is ' + state );
-	if ( state  == 0 ) {
-		 led.write(0)
+	state =  st;
+	console.log('state is currently: ' + state );
+	
+	if ( state  == ON ) {
+		ledOut.write(OFF)
 		console.log('turn it  off');
 	}
-	if ( state == 0) {
-	console.log('state is ' + state );
-		led.write(1);
+	
+	if ( state == OFF) {
+		ledOut.write(ON);
 		console.log('turring on');
 	}
 
  }
 
-console.log('before the state of 13 is ' + led.readSync());
+console.log('before the state of 13 is ' + ledIn.readSync());
 
-led.read(toggle)
+ledIn.read(toggle);
 
-console.log('after  the state of 13 is ' + led.readSync());
 
