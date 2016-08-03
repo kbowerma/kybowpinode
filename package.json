@@ -1,0 +1,31 @@
+{
+  "name": "kybowpinode",
+  "version": "0.9.0",
+  "description": "Kyle Pi GPIO rest service",
+  "main": "off13.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "onoff": "^1.1.1",
+    "pi-gpio": "0.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kbowerma/kybowpinode.git"
+  },
+  "keywords": [
+    "raspberry",
+    "node",
+    "REST",
+    "gpio"
+  ],
+  "author": "Kyle Bowerman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kbowerma/kybowpinode/issues"
+  },
+  "homepage": "https://github.com/kbowerma/kybowpinode#readme"
+}
