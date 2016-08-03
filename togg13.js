@@ -1,4 +1,4 @@
-//dustin
+//dustin edit 2
 var GPIO = require('onoff').Gpio;
 var ledOut = new GPIO(13, 'out');
 var ledIn = ledOut; //new GPIO(13, 'in'); //CWD-- praps this is dumb
