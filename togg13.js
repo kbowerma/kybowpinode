@@ -5,6 +5,14 @@ var state = 3;
 var ON=1;
 var OFF=0;
 
+var fWriteCB=function(err){
+	console.log('executed write');
+	
+	if(err){
+		console.log('however, an error occured during write: ',err);
+	}
+};
+
 function toggle(err,val) {
 	state =  val;
 	console.log('state is currently: ' + state );
@@ -14,11 +22,13 @@ function toggle(err,val) {
 	}
 	
 	if ( state  == ON ) {
-		ledOut.write(OFF)
 		console.log('turn it  off');
+		ledOut.write(OFF,fWriteCB)
+		
 	} else if ( state == OFF) {
-		ledOut.write(ON);
 		console.log('turning on');
+		ledOut.write(ON,fWriteCB);
+		
 	} else {
 		console.log('Well this is embarrsing. I dunno what to make of this.');
 	}
