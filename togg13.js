@@ -5,24 +5,28 @@ var state = 3;
 var ON=1;
 var OFF=0;
 
-function toggle(st) {
-	state =  st;
+function toggle(err,val) {
+	state =  val;
 	console.log('state is currently: ' + state );
+	
+	if(err){
+		console.log('egads! an error! ', err);
+	}
 	
 	if ( state  == ON ) {
 		ledOut.write(OFF)
 		console.log('turn it  off');
-	}
-	
-	if ( state == OFF) {
+	} else if ( state == OFF) {
 		ledOut.write(ON);
-		console.log('turring on');
+		console.log('turning on');
+	} else {
+		console.log('Well this is embarrsing. I dunno what to make of this.');
 	}
 
  }
 
-console.log('before the state of 13 is ' + ledIn.readSync());
-
+console.log('Synchronous read: ' + ledIn.readSync());
+console.log('Asynchronous read: ');
 ledIn.read(toggle);
 
 
