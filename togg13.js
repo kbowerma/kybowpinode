@@ -1,6 +1,6 @@
 var GPIO = require('onoff').Gpio;
 var ledOut = new GPIO(13, 'out');
-var ledIn = new GPIO(13, 'in');
+var ledIn = ledOut; //new GPIO(13, 'in'); //CWD-- praps this is dumb
 var state = 3;
 var ON=1;
 var OFF=0;
