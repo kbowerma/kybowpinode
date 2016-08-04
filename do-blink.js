@@ -18,6 +18,6 @@ gpio.open(33, "output", function(err) {		// Open pin 13 for output
       value = +!value;
       });
 
-    }, 1000);
+    }, 3000);
 
 });
