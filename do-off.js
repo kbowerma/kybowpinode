@@ -1,6 +1,10 @@
 var gpio = require("pi-gpio");
 
-var pin = 33;
+if (process.argv.length <= 2) {
+  var pin = 33;
+  console.log('you did not give me a pin so I will use 33')
+} else var pin = process.argv[2];   // was 33
+
 var value = 0;
 
 
