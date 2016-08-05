@@ -26,6 +26,10 @@ app.get('/unlock/', function(req, res){
 			GPIOCtrl.myread(req,res);
 		 console.log('read url called from myservice');
 		 });
+		 app.get('/toggle/:pin/', function(req, res){
+			 GPIOCtrl.mytoggle(req,res);
+			console.log('toggle url called from myservice');
+			});
 
 app.listen(3000);
 console.log('App Server running at port 3000');

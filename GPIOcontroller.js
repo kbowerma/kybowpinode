@@ -58,6 +58,17 @@ var mywrite = function(req,res){
 }
  module.exports.mywrite = mywrite;
 
+ var mytoggle = function(req,res){
+ 		gpio.read(req.params.pin, function(err,value){
+			var newValue = +! value;
+			gpio.write(req.params.pin, newValue, function(){
+				res.send("toggled to " + newValue )
+			} )
+ 		})
+ 	};
+
+  module.exports.mytoggle = mytoggle;
+
  var myread = function(req,res){
 	 gpio.read(req.params.pin, function(err,value){
 		 //console.log("inside the read call back myResponse is " + JSON.stringify(myResponse));
